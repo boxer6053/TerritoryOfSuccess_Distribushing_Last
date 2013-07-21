@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Оповещения</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Периодичность:</string>
+			<key>Key</key>
+			<string>notification</string>
+			<key>DefaultValue</key>
+			<string>Не больше 1 в день</string>
+			<key>Titles</key>
+			<array>
+				<string>Всегда</string>
+				<string>Не больше 1 в час</string>
+				<string>Не больше 1 в день</string>
+				<string>Не больше 5 в день</string>
+				<string>Не получать 1 час</string>
+				<string>Не получать 4 часа</string>
+				<string>Не получать 8 часов</string>
+				<string>Не получать 24 часа</string>
+				<string>Не получать никогда</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>always</string>
+				<string>1_in_hour</string>
+				<string>1_in_day</string>
+				<string>5_in_day</string>
+				<string>not_1_hour</string>
+				<string>not_4_hour</string>
+				<string>not_8_hour</string>
+				<string>not_24_hour</string>
+				<string>never</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>About</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Версия:</string>
+			<key>DefaultValue</key>
+			<string>1.0</string>
+			<key>Key</key>
+			<string>ver</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Разработано:</string>
+			<key>Key</key>
+			<string>develop</string>
+			<key>DefaultValue</key>
+			<string>Territory of Success</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Разработчики</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Новосельский Андрей</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Key</key>
+			<string>andrii</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Шадов Павел</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Key</key>
+			<string>pavel</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Засядьвовк Алексей</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Key</key>
+			<string>alex</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Ванжула Егор</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>Key</key>
+			<string>egor</string>
+		</dict>
+	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
+</dict>
+</plist>
