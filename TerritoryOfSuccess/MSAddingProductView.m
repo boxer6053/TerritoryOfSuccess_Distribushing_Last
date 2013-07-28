@@ -191,7 +191,7 @@
     {
         [UIView animateWithDuration:0.2 animations:
          ^{
-             self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y - 50, self.contentView.frame.size.width, self.contentView.frame.size.height);
+             self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y - 85, self.contentView.frame.size.width, self.contentView.frame.size.height);
          }];
     }
     //    [self addGestureRecognizer:self.tapRecognizer];
@@ -203,7 +203,7 @@
     {
         [UIView animateWithDuration:0.2 animations:
          ^{
-             self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y + 50, self.contentView.frame.size.width, self.contentView.frame.size.height);
+             self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y + 85, self.contentView.frame.size.width, self.contentView.frame.size.height);
          }];
     }
     //    [self removeGestureRecognizer:self.tapRecognizer];
