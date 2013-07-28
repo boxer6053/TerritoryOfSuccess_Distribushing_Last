@@ -121,12 +121,12 @@
         NSString *message = [dictionary valueForKey:@"status"];
         if(![message isEqualToString:@"failed"]){
             NSLog(@"not my");
-            UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
-                                           initWithTitle:NSLocalizedString(@"AnswersKey",nil)
-                                           style:UIBarButtonItemStyleBordered
-                                           target:self
-                                           action:@selector(toStatAction)];
-            self.navigationItem.rightBarButtonItem = flipButton;
+//            UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
+//                                           initWithTitle:NSLocalizedString(@"AnswersKey",nil)
+//                                           style:UIBarButtonItemStyleBordered
+//                                           target:self
+//                                           action:@selector(toStatAction)];
+//            self.navigationItem.rightBarButtonItem = flipButton;
 
         }
        // [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"DownloadIsCompletedKey",nil)];

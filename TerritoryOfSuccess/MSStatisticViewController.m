@@ -162,12 +162,13 @@
             cell.titleLabel.minimumScaleFactor = 0.3f;
             cell.titleLabel.adjustsFontSizeToFitWidth = YES;
         }
-        if([[[self.receivedArray objectAtIndex:indexPath.row] valueForKey:@"title"] isEqualToString:@"!-- like --!"]){
-            cell.titleLabel.text = NSLocalizedString(@"LikeKey",nil);
-                   }
-        else{
-            cell.titleLabel.text = NSLocalizedString(@"DislikeKey",nil);
-                    }
+//        if([[[self.receivedArray objectAtIndex:indexPath.row] valueForKey:@"title"] isEqualToString:@"Нравится"]){
+//            cell.titleLabel.text = NSLocalizedString(@"LikeKey",nil);
+//                   }
+//        else{
+//            cell.titleLabel.text = NSLocalizedString(@"DislikeKey",nil);
+//                    }
+        cell.titleLabel.text = [[self.receivedArray objectAtIndex:indexPath.row] valueForKey:@"title"];
        
     }
     else{
@@ -221,14 +222,14 @@
 {  
     if(type == kQuestStat){
         self.questionDetailArray = [dictionary valueForKey:@"question"];
+        [self.imageView setImageWithURL:[self.questionDetailArray objectForKey:@"image"] placeholderImage:[UIImage imageNamed:@"placeholder_415*415.png"]];
     self.receivedArray = [dictionary valueForKey:@"options"];
         for(int i=0;i<self.receivedArray.count;i++){
+//            self
             NSString *votesForProduct = [[self.receivedArray objectAtIndex:i] valueForKey:@"cnt"];
             //  NSLog(@" gg %d", [votesForProduct integerValue  ])   ;
             self.totalVotes = self.totalVotes + [votesForProduct integerValue] ;
-         
-            [self.imageView setImageWithURL:[self.questionDetailArray objectForKey:@"image"] placeholderImage:[UIImage imageNamed:@"placeholder_415*415.png"]];
-       
+                
             if(self.interfaceIndex ==1){
                 [self.tableView setUserInteractionEnabled:NO];            }
             else{
