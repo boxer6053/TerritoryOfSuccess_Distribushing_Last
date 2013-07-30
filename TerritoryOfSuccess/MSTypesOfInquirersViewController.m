@@ -14,6 +14,7 @@
 #import "MSInquirerCell.h"
 #import "MSLogInView.h"
 #import "PrettyKit.h"
+#import "ODRefreshControl.h"
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -35,6 +36,8 @@
 @property BOOL loaded;
 @property int interfaceIndex;
 @property BOOL isInternetConnectionFailed;
+@property BOOL isRefreshed;
+@property (strong, nonatomic) ODRefreshControl *refreshControl;
 
 @end
 
@@ -62,6 +65,9 @@
 @synthesize isFirstDownload = _isFirstDownload;
 @synthesize loaded = _loaded;
 @synthesize isInternetConnectionFailed = _isInternetConnectionFailed;
+@synthesize isRefreshed = _isRefreshed;
+@synthesize refreshControl = _refreshControl;
+
 
 - (MSAPI *) api{
     if(!_api){
@@ -140,6 +146,23 @@
                                              selector:@selector(receiveOKClicked:)
                                                  name:@"FailConnectionAllertClickedOK"
                                                object:nil];
+    
+    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableOfInquirers];
+    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
+{
+    self.isRefreshed = YES;
+    
+    if(self.inquirerTypeSegment.selectedSegmentIndex == 0)
+    {
+        [self.api getLastQuestions];
+    }
+    else
+    {
+        [self.api getMyQuestionsWithOffset:0];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -408,6 +431,13 @@
         self.loaded = YES;
 
     }
+    
+    if (self.isRefreshed)
+    {
+        self.isRefreshed = NO;
+        [self.refreshControl endRefreshing];
+    }
+
        [[self tableOfInquirers] reloadData];
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{

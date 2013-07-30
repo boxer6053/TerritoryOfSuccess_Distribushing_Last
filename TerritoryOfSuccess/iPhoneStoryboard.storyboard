@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E3067" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8kx-JT-nNm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="8kx-JT-nNm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -1648,13 +1648,313 @@
         <image name="twButton.png" width="32" height="33"/>
         <image name="vkButton.png" width="32" height="33"/>
     </resources>
+    <classes>
+        <class className="MSAskViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSAskViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="outlet" name="myNavigationItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="tableOfCategories" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="upButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MSBonusCatalogViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSBonusCatalogViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="bonusCatalog" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSBonusCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSBonusCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bonusButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bonusCountLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSBonusSubCatalogViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSBonusSubCatalogViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="subCatalogTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSBrandsAndCategoryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSBrandsAndCategoryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="categoryOrBrandAvailable" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="categoryOrBrandImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categoryOrBrandName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="categoryOrBrandNumber" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSCatalogueViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSCatalogueViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="segmentPressed:"/>
+                <relationship kind="outlet" name="catalogueNavigationItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="categoryAndBrandsControl" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSCheckBoxCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSCheckBoxCell.h"/>
+            <relationships>
+                <relationship kind="action" name="checkboxButtonPressed:"/>
+                <relationship kind="outlet" name="checkboxButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="checkboxLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSCommentCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSCommentCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commentText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="commentatorName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="commentdate" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSCommentsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSCommentsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addComment:"/>
+                <relationship kind="outlet" name="addCommentButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="commentTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="commentsNavigationItem" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="MSCreateQuestionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSCreateQuestionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cleanButton:"/>
+                <relationship kind="action" name="startButton:"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="fbButtonPressed:"/>
+                <relationship kind="action" name="orderButtonAction:"/>
+                <relationship kind="action" name="shareButtonPressed:"/>
+                <relationship kind="action" name="twButtonPressed:"/>
+                <relationship kind="action" name="vkButtonPressed:"/>
+                <relationship kind="outlet" name="activityIndicatorView" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="advisesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="commentsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="detailScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="fbButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="likeView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="mainView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="orderButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="priceImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productDescriptionWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="ratingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="shareButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="starView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="transitionContainerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="twButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="vkButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MSEditButtonsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSEditButtonsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MSFirstNavigationController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSFirstNavigationController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mainNavigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+            </relationships>
+        </class>
+        <class className="MSFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSFirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="changeNewsPage:"/>
+                <relationship kind="action" name="profileButtonPressed:"/>
+                <relationship kind="action" name="sendCode:" candidateClass="UIButton"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="codeInputView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="codeTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="newsActivityIdicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="newsPageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="newsScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="newsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="photoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="profileBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="sendCodeButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MSInquirerCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSInquirerCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="typeImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MSInquirerDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSInquirerDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="inquirerTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="toStatButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="MSNewsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSNewsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="newsDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="newsDetailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="newsImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="newsTitleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSNewsDetailsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSNewsDetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="fbButtonPressed:"/>
+                <relationship kind="action" name="shareButtonPressed:"/>
+                <relationship kind="action" name="twbButtonPressed:"/>
+                <relationship kind="action" name="vkButtonPressed:"/>
+                <relationship kind="outlet" name="articleActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="articleBriefTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="articleDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="articleImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="articleScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="articleShareButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="articleShareFbButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="articleShareTwButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="articleShareVkButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="articleTextWebView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="articleTitleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSNewsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSNewsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="newsNavigationItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="newsTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSProfileSaveCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSProfileSaveCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="SaveButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MSProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logoutButtonPressed:"/>
+                <relationship kind="outlet" name="bonusPointsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bonusView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="logoutButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="pressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSQuestionCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSQuestionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="countLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MSStandardProfileCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSStandardProfileCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="standartTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="standartTitleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSStatisticCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSStatisticCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="answerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="rateView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSStatisticViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSStatisticViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="votedLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MSSubCatalogueCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSSubCatalogueCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="prodactBrandLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productBrandName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="productRatingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="productSmallImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MSSubCatalogueViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSSubCatalogueViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="productsNavigationItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="productsTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MSTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSTabBarController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myTabBarController" candidateClass="UITabBar"/>
+            </relationships>
+        </class>
+        <class className="MSTipsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSTipsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tipsButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="MSTipsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSTipsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButton:"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="tipsPageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="tipsScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="MSTypesOfInquirersViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MSTypesOfInquirersViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="inquirerTypeSwitch:"/>
+                <relationship kind="outlet" name="addQuestionButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="inquirerTypeSegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="inquirersNavigationItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="tableOfInquirers" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PrettyNavigationBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrettyNavigationBar.h"/>
+        </class>
+        <class className="PrettyTabBar" superclassName="UITabBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrettyTabBar.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ffa-R0-niF"/>
+        <segue reference="f75-2Y-K7q"/>
         <segue reference="p5D-WP-p4q"/>
         <segue reference="NNN-f2-Sbf"/>
     </inferredMetricsTieBreakers>

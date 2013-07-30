@@ -13,6 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MSNewsCell.h"
 #import "PrettyKit.h"
+#import "ODRefreshControl.h"
 
 @interface MSNewsViewController ()
 {
@@ -29,6 +30,8 @@
 @property UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UINavigationItem *newsNavigationItem;
 @property BOOL isInternetConnectionFailed;
+@property BOOL isRefreshed;
+@property (strong, nonatomic) ODRefreshControl *refreshControl;
 
 @end
 
@@ -43,6 +46,8 @@
 @synthesize footerButton = _footerButton;
 @synthesize activityIndicator = _activityIndicator;
 @synthesize isInternetConnectionFailed = _isInternetConnectionFailed;
+@synthesize isRefreshed = _isRefreshed;
+@synthesize refreshControl = _refreshControl;
 
 -(MSAPI *)dbApi
 {
@@ -97,6 +102,16 @@
                                              selector:@selector(receiveOKClicked:)
                                                  name:@"FailConnectionAllertClickedOK"
                                                object:nil];
+    
+    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.newsTableView];
+    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
+{
+    self.isRefreshed = YES;
+    
+    [self.dbApi getFiveNewsWithOffset:0];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -166,6 +181,12 @@
     if (!(self.arrayOfNews.count < self.totalNewsCount))
     {
         [self.footerButton setTitle:NSLocalizedString(@"AllNewsDownloadedKey",nil) forState:UIControlStateNormal];
+    }
+    
+    if (self.isRefreshed)
+    {
+        self.isRefreshed = NO;
+        [self.refreshControl endRefreshing];
     }
 }
 

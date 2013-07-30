@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA3183E717A7DFDA00EB6432 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */; };
 		F5100A3E16D3B01000A49FD7 /* MSStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5100A3D16D3B01000A49FD7 /* MSStatisticViewController.m */; };
 		F512B4F516DF7D7F00FC22A5 /* PrettyCustomViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F512B4E316DF7D7F00FC22A5 /* PrettyCustomViewTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F512B4F616DF7D7F00FC22A5 /* PrettyGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F512B4E516DF7D7F00FC22A5 /* PrettyGridTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -185,6 +186,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA3183E517A7DFDA00EB6432 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		F5100A3C16D3B01000A49FD7 /* MSStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStatisticViewController.h; sourceTree = "<group>"; };
 		F5100A3D16D3B01000A49FD7 /* MSStatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStatisticViewController.m; sourceTree = "<group>"; };
 		F510C26716CCF36A0058AB31 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -606,6 +609,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA3183E417A7DFDA00EB6432 /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				DA3183E517A7DFDA00EB6432 /* ODRefreshControl.h */,
+				DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */,
+			);
+			path = ODRefreshControl;
+			sourceTree = "<group>";
+		};
 		F512B4E016DF7D7F00FC22A5 /* PrettyKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +703,7 @@
 		F59AEB7D16AF16C5004519B9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DA3183E417A7DFDA00EB6432 /* ODRefreshControl */,
 				F5F6AE89169C4F72000247D9 /* tessdata */,
 				F5F6AE80169C4F65000247D9 /* tesseract-ios */,
 				F5F6ADE4169C4F5A000247D9 /* tesseract-ios-lib */,
@@ -1388,6 +1401,7 @@
 				F5FB859816F7865B006BF11B /* MSAddingProductView.m in Sources */,
 				F5A7B4F4171EA71700B59358 /* MSTipsViewController.m in Sources */,
 				F5A7B511171EBEF000B59358 /* MSTipsCell.m in Sources */,
+				DA3183E717A7DFDA00EB6432 /* ODRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
