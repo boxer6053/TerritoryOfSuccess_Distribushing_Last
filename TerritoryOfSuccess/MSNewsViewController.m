@@ -161,33 +161,39 @@
     _isDownloading = NO;
     self.newsTableView.tableFooterView = self.footerButton;
     
-    [self.arrayOfNews addObjectsFromArray: [dictionary valueForKey:@"list"]];
-    self.lastDownloadedNews = [dictionary valueForKey:@"list"];
-    if (!_isFirstDownload)
-    {
-        for (int i  = 0; i<self.lastDownloadedNews.count; i++)
-        {
-            NSArray *insertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.newsCount inSection:0]];
-            self.newsCount++;
-            [self.newsTableView insertRowsAtIndexPaths: insertIndexPath withRowAnimation:NO];
-        }
-    }
-    else
-    {
-        self.newsCount += self.arrayOfNews.count;
-        [self.newsTableView reloadData];
-    }
-    
-    if (!(self.arrayOfNews.count < self.totalNewsCount))
-    {
-        [self.footerButton setTitle:NSLocalizedString(@"AllNewsDownloadedKey",nil) forState:UIControlStateNormal];
-    }
-    
     if (self.isRefreshed)
     {
         self.isRefreshed = NO;
+        self.arrayOfNews = [[NSMutableArray alloc] initWithArray:[dictionary valueForKey:@"list"]];
+        self.lastDownloadedNews = [[NSMutableArray alloc] initWithArray:[dictionary valueForKey:@"list"]];
+        self.newsCount = self.arrayOfNews.count;
+        [self.newsTableView reloadData];
         [self.refreshControl endRefreshing];
     }
+    else
+    {
+        [self.arrayOfNews addObjectsFromArray: [dictionary valueForKey:@"list"]];
+        self.lastDownloadedNews = [dictionary valueForKey:@"list"];
+        if (!_isFirstDownload)
+        {
+            for (int i  = 0; i<self.lastDownloadedNews.count; i++)
+            {
+                NSArray *insertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.newsCount inSection:0]];
+                self.newsCount++;
+                [self.newsTableView insertRowsAtIndexPaths: insertIndexPath withRowAnimation:NO];
+            }
+        }
+        else
+        {
+            self.newsCount += self.arrayOfNews.count;
+            [self.newsTableView reloadData];
+        }
+        
+        if (!(self.arrayOfNews.count < self.totalNewsCount))
+        {
+            [self.footerButton setTitle:NSLocalizedString(@"AllNewsDownloadedKey",nil) forState:UIControlStateNormal];
+        }    
+    }    
 }
 
 #pragma mark Table View

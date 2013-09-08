@@ -263,6 +263,84 @@
          landmarkName = "-keyboardWillShow:"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TerritoryOfSuccess/MSNewsViewController.m"
+         timestampString = "400359282.347935"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
+         landmarkName = "-finishedWithDictionary:withTypeRequest:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TerritoryOfSuccess/MSTypesOfInquirersViewController.m"
+         timestampString = "400360416.230487"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "380"
+         endingLineNumber = "380"
+         landmarkName = "-finishedWithDictionary:withTypeRequest:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TerritoryOfSuccess/MSTypesOfInquirersViewController.m"
+         timestampString = "400360954.803493"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "408"
+         endingLineNumber = "408"
+         landmarkName = "-finishedWithDictionary:withTypeRequest:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TerritoryOfSuccess/MSTypesOfInquirersViewController.m"
+         timestampString = "400361281.593681"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "413"
+         endingLineNumber = "413"
+         landmarkName = "-finishedWithDictionary:withTypeRequest:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TerritoryOfSuccess/MSTypesOfInquirersViewController.m"
+         timestampString = "400361062.76117"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "257"
+         endingLineNumber = "257"
+         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TerritoryOfSuccess/MSTypesOfInquirersViewController.m"
+         timestampString = "400361281.593681"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "426"
+         endingLineNumber = "426"
+         landmarkName = "-finishedWithDictionary:withTypeRequest:"
+         landmarkType = "5">
+      </FileBreakpoint>
    </FileBreakpoints>
    <ExceptionBreakpoints>
       <ExceptionBreakpoint

@@ -403,33 +403,52 @@
     
     if (type == kMyQuestions)
     {
-        self.lastDownloaded = [dictionary valueForKey:@"list"];
-        self.counter = [[dictionary valueForKey:@"count"] integerValue];
-        [self.myQuestionsArray addObjectsFromArray:[dictionary valueForKey:@"list"]];
-        if(_isFirstDownload){
-            self.questionCount   += self.myQuestionsArray.count;
+        if (self.isRefreshed)
+        {
+            self.lastDownloaded = [dictionary valueForKey:@"list"];
+            self.counter = [[dictionary valueForKey:@"count"] integerValue];
+            self.myQuestionsArray = [dictionary valueForKey:@"list"];
+            self.questionCount = self.myQuestionsArray.count;
             [self.tableOfInquirers reloadData];
+            if([[dictionary valueForKey:@"status"] isEqualToString:@"failed"])
+            {
+                UIAlertView *failmessage = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Пожалуйста перезайдите в систему!" delegate:self cancelButtonTitle:@"Ок" otherButtonTitles:nil];
+                [failmessage show];
+                [self.tabBarController setSelectedViewController:[self.tabBarController.viewControllers objectAtIndex:0]];
+            }
+            
+            _isFirstDownload = NO;
+            self.loaded = YES;
         }
         else
         {
-        for (int i  = 0; i<self.lastDownloaded.count; i++)
-            {
-            
-            NSArray *insertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.questionCount inSection:0]];
-            self.questionCount++;
-           [self.tableOfInquirers insertRowsAtIndexPaths: insertIndexPath withRowAnimation:NO];
+            self.lastDownloaded = [dictionary valueForKey:@"list"];
+            self.counter = [[dictionary valueForKey:@"count"] integerValue];
+            [self.myQuestionsArray addObjectsFromArray:[dictionary valueForKey:@"list"]];
+            if(_isFirstDownload){
+                self.questionCount   += self.myQuestionsArray.count;
+                [self.tableOfInquirers reloadData];
             }
+            else
+            {
+                for (int i  = 0; i<self.lastDownloaded.count; i++)
+                {
+                    
+                    NSArray *insertIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.questionCount inSection:0]];
+                    self.questionCount++;
+                    [self.tableOfInquirers insertRowsAtIndexPaths: insertIndexPath withRowAnimation:NO];
+                }
+            }
+            if([[dictionary valueForKey:@"status"] isEqualToString:@"failed"])
+            {
+                UIAlertView *failmessage = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Пожалуйста перезайдите в систему!" delegate:self cancelButtonTitle:@"Ок" otherButtonTitles:nil];
+                [failmessage show];
+                [self.tabBarController setSelectedViewController:[self.tabBarController.viewControllers objectAtIndex:0]];
+            }
+            
+            _isFirstDownload = NO;
+            self.loaded = YES;
         }
-        if([[dictionary valueForKey:@"status"] isEqualToString:@"failed"])
-        {
-            UIAlertView *failmessage = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Пожалуйста перезайдите в систему!" delegate:self cancelButtonTitle:@"Ок" otherButtonTitles:nil];
-            [failmessage show];
-            [self.tabBarController setSelectedViewController:[self.tabBarController.viewControllers objectAtIndex:0]];
-        }
-
-        _isFirstDownload = NO;
-        self.loaded = YES;
-
     }
     
     if (self.isRefreshed)
