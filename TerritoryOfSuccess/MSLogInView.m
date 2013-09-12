@@ -78,6 +78,7 @@
         self.emailTextField.clearButtonMode = YES;
         self.emailTextField.delegate = self;
         self.emailTextField.keyboardType = UIKeyboardTypeEmailAddress;
+        [self.emailTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
         [self.loginView addSubview:self.emailTextField];
         
         //password input

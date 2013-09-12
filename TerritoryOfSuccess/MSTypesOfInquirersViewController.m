@@ -407,7 +407,7 @@
         {
             self.lastDownloaded = [dictionary valueForKey:@"list"];
             self.counter = [[dictionary valueForKey:@"count"] integerValue];
-            self.myQuestionsArray = [dictionary valueForKey:@"list"];
+            self.myQuestionsArray = [NSMutableArray arrayWithArray:[dictionary valueForKey:@"list"]];
             self.questionCount = self.myQuestionsArray.count;
             [self.tableOfInquirers reloadData];
             if([[dictionary valueForKey:@"status"] isEqualToString:@"failed"])
