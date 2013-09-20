@@ -186,6 +186,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA20B1D117EC4AEB00F8CEBE /* TOS_icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TOS_icon_120x120.png; sourceTree = "<group>"; };
 		DA3183E517A7DFDA00EB6432 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		F5100A3C16D3B01000A49FD7 /* MSStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStatisticViewController.h; sourceTree = "<group>"; };
@@ -846,6 +847,7 @@
 		F5F6ADB3169C4F21000247D9 = {
 			isa = PBXGroup;
 			children = (
+				DA20B1D117EC4AEB00F8CEBE /* TOS_icon_120x120.png */,
 				FADC925516C50799006BD95C /* Default@2x.png */,
 				FADC925A16C5098D006BD95C /* Default.png */,
 				FADC925F16C50995006BD95C /* Default-568h@2x.png */,

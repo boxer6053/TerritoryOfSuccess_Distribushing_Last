@@ -14,6 +14,7 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>TOS_icon_120x120</string>
 				<string>iconWhite57.png</string>
 				<string>iconWhite114.png</string>
 			</array>
