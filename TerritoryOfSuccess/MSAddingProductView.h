@@ -13,6 +13,7 @@
 @required
 -(void)dismissPopViewAdd:(BOOL)sendResult;
 -(void)updateTable;
+-(void)updateTableWithDictionay:(NSDictionary *)dict;
 
 @end
 

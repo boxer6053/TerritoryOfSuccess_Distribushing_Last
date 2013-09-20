@@ -251,7 +251,7 @@
         NSString *currentID = [self.requestStringArray objectAtIndex:i];
         NSLog(@"current %@",currentID)  ;
         NSLog(@"comparing %@", string);
-        if([string isEqualToString:currentID]){
+        if([[NSString stringWithFormat:@"%@", string] isEqualToString:[NSString stringWithFormat:@"%@", currentID]]){
             NSLog(@"its in");
             access = 1;
             break;

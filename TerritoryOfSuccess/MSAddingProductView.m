@@ -8,6 +8,7 @@
 
 #import "MSAddingProductView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SVProgressHUD.h"
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -166,6 +167,7 @@
 }
 -(void)sendPressed{
     
+    [SVProgressHUD show];
     NSString *divider = @" ";
     NSString *firstPart = [self.brandTextField.text stringByAppendingString:divider];
     
@@ -230,7 +232,8 @@
     if(type == kCustomProduct){
         if([[[dictionary valueForKey:@"message"] valueForKey:@"text"] isEqualToString:@"!-- quesion-item-created --!"]){
             NSLog(@"PERFECT");
-            [self.delegate updateTable];
+            [self.delegate updateTableWithDictionay:[dictionary copy]];
+            [SVProgressHUD dismiss];
         }
     }
     

@@ -438,6 +438,17 @@
       [self.tableOfCategories setUserInteractionEnabled:NO];
     [self.api getQuestionsWithParentID:self.upperID];
 }
+
+- (void)updateTableWithDictionay:(NSDictionary *)dict
+{
+    [self.delegate saveTitleView:self.upperTitle];
+    [self.delegate addProduct:[[dict valueForKey:@"item"] valueForKey:@"id"] withURL:[[dict valueForKey:@"item"] valueForKey:@"image"]];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate saveTitleView:self.upperTitle];
+        [self.delegate setUpperId:self.upperID];
+    }];
+}
+
 static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 //зміна розміру фото
