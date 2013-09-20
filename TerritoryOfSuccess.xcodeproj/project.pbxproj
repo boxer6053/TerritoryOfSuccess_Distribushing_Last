@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA20B1D317EC4BEA00F8CEBE /* iconWhite120.png in Resources */ = {isa = PBXBuildFile; fileRef = DA20B1D217EC4BEA00F8CEBE /* iconWhite120.png */; };
 		DA3183E717A7DFDA00EB6432 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */; };
 		F5100A3E16D3B01000A49FD7 /* MSStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5100A3D16D3B01000A49FD7 /* MSStatisticViewController.m */; };
 		F512B4F516DF7D7F00FC22A5 /* PrettyCustomViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F512B4E316DF7D7F00FC22A5 /* PrettyCustomViewTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -186,7 +187,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA20B1D117EC4AEB00F8CEBE /* TOS_icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TOS_icon_120x120.png; sourceTree = "<group>"; };
+		DA20B1D217EC4BEA00F8CEBE /* iconWhite120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconWhite120.png; sourceTree = "<group>"; };
 		DA3183E517A7DFDA00EB6432 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		F5100A3C16D3B01000A49FD7 /* MSStatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStatisticViewController.h; sourceTree = "<group>"; };
@@ -840,6 +841,7 @@
 				F5FF668516D7864B00E64AD9 /* likeIcon.png */,
 				FAAD062B16A4326A00D37373 /* iconWhite114.png */,
 				FAAD062916A4326400D37373 /* iconWhite57.png */,
+				DA20B1D217EC4BEA00F8CEBE /* iconWhite120.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -847,7 +849,6 @@
 		F5F6ADB3169C4F21000247D9 = {
 			isa = PBXGroup;
 			children = (
-				DA20B1D117EC4AEB00F8CEBE /* TOS_icon_120x120.png */,
 				FADC925516C50799006BD95C /* Default@2x.png */,
 				FADC925A16C5098D006BD95C /* Default.png */,
 				FADC925F16C50995006BD95C /* Default-568h@2x.png */,
@@ -1259,6 +1260,7 @@
 				FA884BBE16B7FB35002A7FDC /* shareButton.png in Resources */,
 				FA884BC816B82B74002A7FDC /* Settings.bundle in Resources */,
 				F541FDF716BAE1B00021A93F /* rect_220*30.png in Resources */,
+				DA20B1D317EC4BEA00F8CEBE /* iconWhite120.png in Resources */,
 				FA6DE84D16BAD16F00B48434 /* checkbox_empty.png in Resources */,
 				FA6DE84E16BAD16F00B48434 /* checkbox_full.png in Resources */,
 				F5B1883716BBC1A400290F27 /* Profile-Picture_40*28_white.png in Resources */,
