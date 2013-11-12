@@ -98,7 +98,10 @@
     self.newsTableView.tableFooterView = self.activityIndicator;
     [self.activityIndicator startAnimating];
     
-    [self customizeNavBar];
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
+    {
+        [self customizeNavBar];
+    }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveOKClicked:)

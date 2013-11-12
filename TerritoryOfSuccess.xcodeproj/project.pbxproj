@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9D7743F1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7743E1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard */; };
 		DA20B1D317EC4BEA00F8CEBE /* iconWhite120.png in Resources */ = {isa = PBXBuildFile; fileRef = DA20B1D217EC4BEA00F8CEBE /* iconWhite120.png */; };
 		DA3183E717A7DFDA00EB6432 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */; };
 		F5100A3E16D3B01000A49FD7 /* MSStatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5100A3D16D3B01000A49FD7 /* MSStatisticViewController.m */; };
@@ -187,6 +188,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B9D7743E1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard_iOS7.storyboard; sourceTree = "<group>"; };
 		DA20B1D217EC4BEA00F8CEBE /* iconWhite120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconWhite120.png; sourceTree = "<group>"; };
 		DA3183E517A7DFDA00EB6432 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
@@ -894,6 +896,7 @@
 				F5F6ADD3169C4F21000247D9 /* MSAppDelegate.h */,
 				F5F6ADD4169C4F21000247D9 /* MSAppDelegate.m */,
 				FAEF9F3416F33D6B004916A9 /* iPhoneStoryboard.storyboard */,
+				B9D7743E1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard */,
 				F5FF669116D7BEE000E64AD9 /* MSStatisticCell.h */,
 				F5FF669216D7BEE000E64AD9 /* MSStatisticCell.m */,
 				FA1BEA8E16A813BF00F2C219 /* Pauli */,
@@ -1274,6 +1277,7 @@
 				F5B2D23716C4180900EC7F00 /* logo_color_invert_40*147_ukr.png in Resources */,
 				FADC925D16C50995006BD95C /* Default-568h@2x.png in Resources */,
 				FADC925816C5098D006BD95C /* Default.png in Resources */,
+				B9D7743F1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard in Resources */,
 				FADC925316C50799006BD95C /* Default@2x.png in Resources */,
 				F5FF668616D7864C00E64AD9 /* likeIcon.png in Resources */,
 				F5FF668816D7910000E64AD9 /* questionMark.png in Resources */,
@@ -1566,6 +1570,7 @@
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TerritoryOfSuccess\"",

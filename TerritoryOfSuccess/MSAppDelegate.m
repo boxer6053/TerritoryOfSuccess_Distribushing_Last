@@ -39,6 +39,7 @@
 //        [[UITabBar appearance] setSelectedImageTintColor:[UIColor orangeColor]];
         [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
         [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateHighlighted];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     }
     else
     {
@@ -59,6 +60,21 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:currentLanguage forKey:@"currentLanguage"];
   
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        // Instantiate a new storyboard object using the storyboard file named Storyboard_iPhone35
+        UIStoryboard *iPhoneStoryboard_iOS7 = [UIStoryboard storyboardWithName:@"iPhoneStoryboard_iOS7" bundle:nil];
+        
+        // Instantiate the initial view controller object from the storyboard
+        UIViewController *initialViewController = [iPhoneStoryboard_iOS7 instantiateInitialViewController];
+        
+        // Instantiate a UIWindow object and initialize it with the screen size of the iOS device
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        // Set the initial view controller to be the root view controller of the window object
+        self.window.rootViewController  = initialViewController;
+    }
+    
 	[self.window makeKeyAndVisible];
     
 	// Let the device know we want to receive push notifications

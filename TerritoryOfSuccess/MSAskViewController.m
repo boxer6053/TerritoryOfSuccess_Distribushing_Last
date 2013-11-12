@@ -95,7 +95,10 @@
     [self.headerButton setAlpha:0.7];
     
     self.thisIsProducts = NO;
-    [self customizeNavBar];
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
+    {
+        [self customizeNavBar];
+    }
     if(!self.upperTitle){
     self.upperTitle = @"";
     }

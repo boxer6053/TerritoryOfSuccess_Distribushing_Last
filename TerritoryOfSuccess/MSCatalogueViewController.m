@@ -74,7 +74,10 @@
     }
     [self.tableView.layer setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0].CGColor];
     
-    [self customizeNavBar];
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
+    {
+        [self customizeNavBar];
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveOKClicked:)

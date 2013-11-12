@@ -7,6 +7,7 @@
 //
 
 #import "MSTipsViewController.h"
+#import "MSiOSVersionControlHeader.h"
 
 @interface MSTipsViewController ()
 
@@ -29,6 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        [self.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
+    }
     self.navigationBar.topItem.title = NSLocalizedString(@"TipsKey", nil);
   NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
     NSLog(@"lang = %@",language);
