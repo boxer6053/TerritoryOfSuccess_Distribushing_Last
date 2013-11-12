@@ -138,7 +138,10 @@
     self.newsActivityIdicator.hidesWhenStopped = YES;
     [self.newsActivityIdicator startAnimating];
     
-    [self customizeNavBar];
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
+    {
+        [self customizeNavBar];
+    }
     
     self.beginCount = 0;
     self.endCount = 0;

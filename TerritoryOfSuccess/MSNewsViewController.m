@@ -14,6 +14,7 @@
 #import "MSNewsCell.h"
 #import "PrettyKit.h"
 #import "ODRefreshControl.h"
+#import "MSiOSVersionControlHeader.h"
 
 @interface MSNewsViewController ()
 {
@@ -71,6 +72,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
     [self.newsNavigationItem setTitle:NSLocalizedString(@"NewsNavItemTitleKey", nil)];
     self.arrayOfNews = [[NSMutableArray alloc]init];
     _isFirstDownload = YES;
@@ -97,7 +99,7 @@
     [self.activityIndicator startAnimating];
     
     [self customizeNavBar];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveOKClicked:)
                                                  name:@"FailConnectionAllertClickedOK"

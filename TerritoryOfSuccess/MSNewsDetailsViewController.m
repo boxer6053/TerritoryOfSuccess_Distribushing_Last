@@ -12,6 +12,8 @@
 #import "MSShare.h"
 #import "SVProgressHUD.h"
 #import <dispatch/dispatch.h>
+#import "MSiOSVersionControlHeader.h"
+
 @interface MSNewsDetailsViewController ()
 {
     dispatch_queue_t backgroundQueue;
@@ -66,6 +68,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+//        [self.navigationController.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
+    }
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     if ([[UIScreen mainScreen] bounds].size.height == 568) {
         [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]]];
@@ -194,8 +203,13 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0), ^{[self.articleTextWebView loadHTMLString:[NSString stringWithFormat:@"<div background-color:transparent>%@<div>",articleText] baseURL:nil];});
         
         self.articleBriefTextView.text = [[dictionary valueForKey:@"post"] valueForKey:@"brief"];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            [self.articleBriefTextView sizeToFit];
+            [self.articleBriefTextView layoutIfNeeded];
+        }
         self.articleDateLabel.text = [[dictionary valueForKey:@"post"] valueForKey:@"date"];
-        self.articleBriefTextView.frame = CGRectMake(self.articleBriefTextView.frame.origin.x, self.articleBriefTextView.frame.origin.y, self.articleBriefTextView.frame.size.width, self.articleBriefTextView.contentSize.height);
+        self.articleBriefTextView.frame = CGRectMake(self.articleBriefTextView.frame.origin.x, self.articleBriefTextView.frame.origin.y, 310, self.articleBriefTextView.contentSize.height);
         self.articleBriefTextView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
     }
 }

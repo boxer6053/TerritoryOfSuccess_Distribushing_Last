@@ -7,6 +7,7 @@
 //
 
 #import "MSFirstNavigationController.h"
+#import "MSiOSVersionControlHeader.h"
 
 @interface MSFirstNavigationController ()
 
@@ -26,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+//        [self.mainNavigationBar setFrame:CGRectMake(0, 0, 320, 64)];
+    }
 }
 
 - (void)didReceiveMemoryWarning

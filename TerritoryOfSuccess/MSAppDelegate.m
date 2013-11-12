@@ -1,5 +1,6 @@
 #import "MSAppDelegate.h"
 #import "checkConnection.h"
+#import "MSiOSVersionControlHeader.h"
 
 @implementation MSAppDelegate
 
@@ -28,12 +29,26 @@
 
 - (void)customizeInterface
 {
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+        [[UIBarButtonItem appearance] setTintColor:[UIColor orangeColor]];
+        
+        [[UITabBar appearance] setBackgroundColor:[UIColor blackColor]];
+//        [[UITabBar appearance] setSelectedImageTintColor:[UIColor orangeColor]];
+        [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
+        [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateHighlighted];
+    }
+    else
+    {
         [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
         [[UIBarButtonItem appearance] setTintColor:[UIColor orangeColor]];
-    
+        
         [[UITabBar appearance] setBackgroundColor:[UIColor blackColor]];
         [[UITabBar appearance] setSelectedImageTintColor:[UIColor orangeColor]];
         [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, nil] forState:UIControlStateHighlighted];
+    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

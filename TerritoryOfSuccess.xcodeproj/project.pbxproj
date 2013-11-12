@@ -1200,6 +1200,11 @@
 				CLASSPREFIX = MS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Matrix Soft";
+				TargetAttributes = {
+					F5F6ADBD169C4F21000247D9 = {
+						DevelopmentTeam = MV8699E5G2;
+					};
+				};
 			};
 			buildConfigurationList = F5F6ADB8169C4F21000247D9 /* Build configuration list for PBXProject "TerritoryOfSuccess" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1544,7 +1549,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "891EE4C4-5702-4B39-AECF-41951E858F0B";
+				PROVISIONING_PROFILE = "CE338799-A8DA-4BA2-A29A-AA2F55A3D2F1";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
@@ -1555,7 +1560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Max Repik (R8UN278F4L)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TerritoryOfSuccess\"",
@@ -1572,7 +1577,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "891EE4C4-5702-4B39-AECF-41951E858F0B";
+				PROVISIONING_PROFILE = "CE338799-A8DA-4BA2-A29A-AA2F55A3D2F1";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
