@@ -38,6 +38,7 @@
 @property BOOL isInternetConnectionFailed;
 @property BOOL isRefreshed;
 @property (strong, nonatomic) ODRefreshControl *refreshControl;
+@property (strong, nonatomic) UIRefreshControl *refreshControliOS7;
 
 @end
 
@@ -67,6 +68,7 @@
 @synthesize isInternetConnectionFailed = _isInternetConnectionFailed;
 @synthesize isRefreshed = _isRefreshed;
 @synthesize refreshControl = _refreshControl;
+@synthesize refreshControliOS7 = _refreshControliOS7;
 
 
 - (MSAPI *) api{
@@ -150,8 +152,18 @@
                                                  name:@"FailConnectionAllertClickedOK"
                                                object:nil];
     
-    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableOfInquirers];
-    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        self.refreshControliOS7 = [[UIRefreshControl alloc] init];
+        [self.refreshControliOS7 setTintColor:[UIColor colorWithRed:219/255.0 green:220/255.0 blue:222/255.0 alpha:1.0]];
+        [self.refreshControliOS7 addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+        [self.tableOfInquirers addSubview:self.refreshControliOS7];
+    }
+    else
+    {
+        self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableOfInquirers];
+        [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+    }
 }
 
 - (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
@@ -307,6 +319,8 @@
         
     }
     
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -457,7 +471,14 @@
     if (self.isRefreshed)
     {
         self.isRefreshed = NO;
-        [self.refreshControl endRefreshing];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            [self.refreshControliOS7 endRefreshing];
+        }
+        else
+        {
+            [self.refreshControl endRefreshing];
+        }
     }
 
        [[self tableOfInquirers] reloadData];

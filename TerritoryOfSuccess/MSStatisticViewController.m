@@ -83,17 +83,38 @@
     if(self.interfaceIndex == 1){
          if ([[UIScreen mainScreen] bounds].size.height == 568) {
     
-             [self.tableView setFrame:CGRectMake(0, 310, self.tableView.frame.size.width, self.tableView.frame.size.height)];
              
-             self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(35, 50, 250, 250)];
+             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+             {
+                 [self.tableView setFrame:CGRectMake(0, 310 - 20, self.tableView.frame.size.width, self.tableView.frame.size.height)];
+
+                 self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(35, 50 + 64, 250, 250)];
+             }
+             else
+             {
+                 [self.tableView setFrame:CGRectMake(0, 310, self.tableView.frame.size.width, self.tableView.frame.size.height)];
+
+                 self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(35, 50, 250, 250)];
+             }
              
 
         
          }
          else{
-             [self.tableView setFrame:CGRectMake(0, 210, self.tableView.frame.size.width, self.tableView.frame.size.height)];
              
-             self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(85, 50, 150, 150)];
+             if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+             {
+                 [self.tableView setFrame:CGRectMake(0, 210 - 20, self.tableView.frame.size.width, self.tableView.frame.size.height)];
+
+                 self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(85, 50 + 64, 150, 150)];
+             }
+             else
+             {
+                 [self.tableView setFrame:CGRectMake(0, 210, self.tableView.frame.size.width, self.tableView.frame.size.height)];
+
+                 self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(85, 50, 150, 150)];
+             }
+
                      }
         self.imageView.layer.cornerRadius = 10.0f;
         self.imageView.clipsToBounds = YES;
