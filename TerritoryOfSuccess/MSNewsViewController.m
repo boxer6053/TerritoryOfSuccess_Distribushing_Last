@@ -33,6 +33,7 @@
 @property BOOL isInternetConnectionFailed;
 @property BOOL isRefreshed;
 @property (strong, nonatomic) ODRefreshControl *refreshControl;
+@property (strong, nonatomic) UIRefreshControl *refreshControliOS7;
 
 @end
 
@@ -49,6 +50,7 @@
 @synthesize isInternetConnectionFailed = _isInternetConnectionFailed;
 @synthesize isRefreshed = _isRefreshed;
 @synthesize refreshControl = _refreshControl;
+@synthesize refreshControliOS7 = _refreshControliOS7;
 
 -(MSAPI *)dbApi
 {
@@ -101,6 +103,16 @@
     if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
         [self customizeNavBar];
+        
+        self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.newsTableView];
+        [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+    }
+    else
+    {
+        self.refreshControliOS7 = [[UIRefreshControl alloc] init];
+        [self.refreshControliOS7 setTintColor:[UIColor colorWithRed:219/255.0 green:220/255.0 blue:222/255.0 alpha:1.0]];
+        [self.refreshControliOS7 addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+        [self.newsTableView addSubview:self.refreshControliOS7];
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -108,8 +120,6 @@
                                                  name:@"FailConnectionAllertClickedOK"
                                                object:nil];
     
-    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.newsTableView];
-    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
@@ -173,7 +183,14 @@
         self.lastDownloadedNews = [[NSMutableArray alloc] initWithArray:[dictionary valueForKey:@"list"]];
         self.newsCount = self.arrayOfNews.count;
         [self.newsTableView reloadData];
-        [self.refreshControl endRefreshing];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            [self.refreshControliOS7 endRefreshing];
+        }
+        else
+        {
+            [self.refreshControl endRefreshing];
+        }
     }
     else
     {
