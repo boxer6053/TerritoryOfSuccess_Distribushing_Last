@@ -514,20 +514,40 @@
     if (self.shareIsPressed == NO)
     {
         [UIView animateWithDuration:0.5 animations:^{
-            self.mainView.frame = CGRectMake(self.mainView.frame.origin.x, self.mainView.frame.origin.y + 35, self.mainView.frame.size.width, self.mainView.frame.size.height);
-            self.vkButton.frame = CGRectMake(self.vkButton.frame.origin.x, self.vkButton.frame.origin.y + 35, self.vkButton.frame.size.width, self.vkButton.frame.size.height);
-            self.fbButton.frame = CGRectMake(self.fbButton.frame.origin.x, self.fbButton.frame.origin.y + 35, self.fbButton.frame.size.width, self.fbButton.frame.size.height);
-            self.twButton.frame = CGRectMake(self.twButton.frame.origin.x, self.twButton.frame.origin.y + 35, self.twButton.frame.size.width, self.twButton.frame.size.height);
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                self.mainView.frame = CGRectMake(self.mainView.frame.origin.x, self.mainView.frame.origin.y + 35, self.mainView.frame.size.width, self.mainView.frame.size.height);
+                self.vkButton.frame = CGRectMake(self.vkButton.frame.origin.x, self.vkButton.frame.origin.y + 35 + 64, self.vkButton.frame.size.width, self.vkButton.frame.size.height);
+                self.fbButton.frame = CGRectMake(self.fbButton.frame.origin.x, self.fbButton.frame.origin.y + 35 + 64, self.fbButton.frame.size.width, self.fbButton.frame.size.height);
+                self.twButton.frame = CGRectMake(self.twButton.frame.origin.x, self.twButton.frame.origin.y + 35 + 64, self.twButton.frame.size.width, self.twButton.frame.size.height);
+            }
+            else
+            {
+                self.mainView.frame = CGRectMake(self.mainView.frame.origin.x, self.mainView.frame.origin.y + 35, self.mainView.frame.size.width, self.mainView.frame.size.height);
+                self.vkButton.frame = CGRectMake(self.vkButton.frame.origin.x, self.vkButton.frame.origin.y + 35, self.vkButton.frame.size.width, self.vkButton.frame.size.height);
+                self.fbButton.frame = CGRectMake(self.fbButton.frame.origin.x, self.fbButton.frame.origin.y + 35, self.fbButton.frame.size.width, self.fbButton.frame.size.height);
+                self.twButton.frame = CGRectMake(self.twButton.frame.origin.x, self.twButton.frame.origin.y + 35, self.twButton.frame.size.width, self.twButton.frame.size.height);
+            }
         }];
         self.shareIsPressed = YES;
     }
     else
     {
         [UIView animateWithDuration:0.5 animations:^{
-            self.mainView.frame = CGRectMake(self.mainView.frame.origin.x, self.mainView.frame.origin.y - 35, self.mainView.frame.size.width, self.mainView.frame.size.height);
-            self.vkButton.frame = CGRectMake(self.vkButton.frame.origin.x, self.vkButton.frame.origin.y - 35, self.vkButton.frame.size.width, self.vkButton.frame.size.height);
-            self.fbButton.frame = CGRectMake(self.fbButton.frame.origin.x, self.fbButton.frame.origin.y -35, self.fbButton.frame.size.width, self.fbButton.frame.size.height);
-            self.twButton.frame = CGRectMake(self.twButton.frame.origin.x, self.twButton.frame.origin.y -35, self.twButton.frame.size.width, self.twButton.frame.size.height);
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                self.mainView.frame = CGRectMake(self.mainView.frame.origin.x, self.mainView.frame.origin.y - 35, self.mainView.frame.size.width, self.mainView.frame.size.height);
+                self.vkButton.frame = CGRectMake(self.vkButton.frame.origin.x, self.vkButton.frame.origin.y - 35 - 64, self.vkButton.frame.size.width, self.vkButton.frame.size.height);
+                self.fbButton.frame = CGRectMake(self.fbButton.frame.origin.x, self.fbButton.frame.origin.y -35 - 64, self.fbButton.frame.size.width, self.fbButton.frame.size.height);
+                self.twButton.frame = CGRectMake(self.twButton.frame.origin.x, self.twButton.frame.origin.y -35 - 64, self.twButton.frame.size.width, self.twButton.frame.size.height);
+            }
+            else
+            {
+                self.mainView.frame = CGRectMake(self.mainView.frame.origin.x, self.mainView.frame.origin.y - 35, self.mainView.frame.size.width, self.mainView.frame.size.height);
+                self.vkButton.frame = CGRectMake(self.vkButton.frame.origin.x, self.vkButton.frame.origin.y - 35, self.vkButton.frame.size.width, self.vkButton.frame.size.height);
+                self.fbButton.frame = CGRectMake(self.fbButton.frame.origin.x, self.fbButton.frame.origin.y -35, self.fbButton.frame.size.width, self.fbButton.frame.size.height);
+                self.twButton.frame = CGRectMake(self.twButton.frame.origin.x, self.twButton.frame.origin.y -35, self.twButton.frame.size.width, self.twButton.frame.size.height);
+            }
         }];
         self.shareIsPressed = NO;
     }

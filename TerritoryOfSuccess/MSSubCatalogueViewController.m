@@ -138,6 +138,7 @@
     cell.productNumberInList = indexPath.row;
     
     cell.tag = [[[self.arrayOfProducts objectAtIndex:indexPath.row] valueForKey:@"id"] integerValue];
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
