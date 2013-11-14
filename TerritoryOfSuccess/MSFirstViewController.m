@@ -425,15 +425,30 @@
             
             if (self.screenHeight == 568)
             {
-                [overlayImageView setFrame:CGRectMake((self.screenWidth - self.frameMarkWidth)/2, (self.screenHeight - 96 - self.frameMarkHeight)/2, self.frameMarkWidth, self.frameMarkHeight)];
-                
-                [overlayAlphaTopView setFrame:CGRectMake(0, 0, 320, (self.screenHeight - 96 - self.frameMarkHeight)/2)];
-                
-                [overlayAlphaBottomView setFrame:CGRectMake(0, (self.screenHeight - 96 + self.frameMarkHeight)/2, 320, self.screenHeight - (self.screenHeight - 96 + self.frameMarkHeight)/2 - 96)];
-                
-                [overlayAlphaLeftView setFrame:CGRectMake(0, (self.screenHeight - 96 - self.frameMarkHeight)/2, (self.screenWidth - self.frameMarkWidth)/2, self.frameMarkHeight)];
-                
-                [overlayAlphaRightView setFrame:CGRectMake(self.frameMarkWidth + (self.screenWidth - self.frameMarkWidth)/2, (self.screenHeight - 96 - self.frameMarkHeight)/2, 320 - self.frameMarkWidth + (self.screenWidth - self.frameMarkWidth)/2, self.frameMarkHeight)];
+                if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+                {
+                    [overlayImageView setFrame:CGRectMake((self.screenWidth - self.frameMarkWidth)/2, (self.screenHeight - 96 - self.frameMarkHeight)/2, self.frameMarkWidth, self.frameMarkHeight)];
+                    
+                    [overlayAlphaTopView setFrame:CGRectMake(0, 0 + 20, 320, (self.screenHeight - 96 - self.frameMarkHeight)/2)];
+                    
+                    [overlayAlphaBottomView setFrame:CGRectMake(0, (self.screenHeight - 96 + self.frameMarkHeight)/2, 320, self.screenHeight - (self.screenHeight - 96 + self.frameMarkHeight)/2 - 96 + 3)];
+                    
+                    [overlayAlphaLeftView setFrame:CGRectMake(0, (self.screenHeight - 96 - self.frameMarkHeight)/2, (self.screenWidth - self.frameMarkWidth)/2, self.frameMarkHeight)];
+                    
+                    [overlayAlphaRightView setFrame:CGRectMake(self.frameMarkWidth + (self.screenWidth - self.frameMarkWidth)/2, (self.screenHeight - 96 - self.frameMarkHeight)/2, 320 - self.frameMarkWidth + (self.screenWidth - self.frameMarkWidth)/2, self.frameMarkHeight)];
+                }
+                else
+                {
+                    [overlayImageView setFrame:CGRectMake((self.screenWidth - self.frameMarkWidth)/2, (self.screenHeight - 96 - self.frameMarkHeight)/2, self.frameMarkWidth, self.frameMarkHeight)];
+                    
+                    [overlayAlphaTopView setFrame:CGRectMake(0, 0, 320, (self.screenHeight - 96 - self.frameMarkHeight)/2)];
+                    
+                    [overlayAlphaBottomView setFrame:CGRectMake(0, (self.screenHeight - 96 + self.frameMarkHeight)/2, 320, self.screenHeight - (self.screenHeight - 96 + self.frameMarkHeight)/2 - 96)];
+                    
+                    [overlayAlphaLeftView setFrame:CGRectMake(0, (self.screenHeight - 96 - self.frameMarkHeight)/2, (self.screenWidth - self.frameMarkWidth)/2, self.frameMarkHeight)];
+                    
+                    [overlayAlphaRightView setFrame:CGRectMake(self.frameMarkWidth + (self.screenWidth - self.frameMarkWidth)/2, (self.screenHeight - 96 - self.frameMarkHeight)/2, 320 - self.frameMarkWidth + (self.screenWidth - self.frameMarkWidth)/2, self.frameMarkHeight)];
+                }
             }
             else
             {
@@ -584,7 +599,14 @@ static inline double radians (double degrees)
     if ([[UIScreen mainScreen] bounds].size.height == 568)
     {
         rect.origin.x = 140;
-        rect.origin.y = 285;
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            rect.origin.y = 285 + 20;
+        }
+        else
+        {
+            rect.origin.y = 285;
+        }
         rect.size.width = cropWidth * 2;
         rect.size.height = cropHeight * 2;
     }
