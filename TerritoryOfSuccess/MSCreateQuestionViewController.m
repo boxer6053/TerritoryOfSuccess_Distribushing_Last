@@ -55,7 +55,14 @@
 - (void)viewDidLoad
 {
     self.descriptionLabel = [[UILabel alloc] init];
-    self.descriptionLabel.frame = CGRectMake(5, 150, 310, 150);
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        self.descriptionLabel.frame = CGRectMake(5, 150 + 64, 310, 150);
+    }
+    else
+    {
+        self.descriptionLabel.frame = CGRectMake(5, 150, 310, 150);
+    }
     self.descriptionLabel.alpha = 0.7;
     self.descriptionLabel.numberOfLines = 5;
     self.descriptionLabel.text = NSLocalizedString(@"DescriptionCreatingKey",nil);
@@ -90,9 +97,9 @@
     [self.cleanButton setBackgroundImage:[UIImage imageNamed:@"chooseButton copy.png"] forState:UIControlStateNormal];
     [self.askButton setBackgroundImage:[UIImage imageNamed:@"chooseButton.png"] forState:UIControlStateDisabled];
     [self.cleanButton setBackgroundImage:[UIImage imageNamed:@"chooseButton copy.png"] forState:UIControlStateDisabled];
+    
     self.askButton.frame = CGRectMake(0, 0, 155, 40);
     self.cleanButton.frame = CGRectMake(155, 0, 155, 40);
-  
     
     
 
@@ -134,25 +141,49 @@
     //фреймы для разных экранов (4 и 5 айфон)
     if ([[UIScreen mainScreen] bounds].size.height == 568)
     {
-             [image1 setFrame:CGRectMake(50, 58, 80,80)];
-        [image2 setFrame:CGRectMake(190, 58, 80,80)];
-        [image3 setFrame:CGRectMake(50, 168, 80,80)];
-        [image4 setFrame:CGRectMake(190, 168, 80,80)];
-        [image5 setFrame:CGRectMake(50, 278, 80,80)];
-        [image6 setFrame:CGRectMake(190, 278, 80,80)];
-        [viewForButtons setFrame:CGRectMake(5, 400, 310, 40)];
-
-        
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            [image1 setFrame:CGRectMake(50, 58 + 64, 80,80)];
+            [image2 setFrame:CGRectMake(190, 58 + 64, 80,80)];
+            [image3 setFrame:CGRectMake(50, 168 + 64, 80,80)];
+            [image4 setFrame:CGRectMake(190, 168 + 64, 80,80)];
+            [image5 setFrame:CGRectMake(50, 278 + 64, 80,80)];
+            [image6 setFrame:CGRectMake(190, 278 + 64, 80,80)];
+            [viewForButtons setFrame:CGRectMake(5, 400 + 64, 310, 40)];
+        }
+        else
+        {
+            [image1 setFrame:CGRectMake(50, 58, 80,80)];
+            [image2 setFrame:CGRectMake(190, 58, 80,80)];
+            [image3 setFrame:CGRectMake(50, 168, 80,80)];
+            [image4 setFrame:CGRectMake(190, 168, 80,80)];
+            [image5 setFrame:CGRectMake(50, 278, 80,80)];
+            [image6 setFrame:CGRectMake(190, 278, 80,80)];
+            [viewForButtons setFrame:CGRectMake(5, 400, 310, 40)];
+        }
     }
     else
     {
-        [viewForButtons setFrame:CGRectMake(5, 315, 310, 40)];
-        [image1 setFrame:CGRectMake(50, 36, 80,80)];
-        [image2 setFrame:CGRectMake(190, 36, 80,80)];
-        [image3 setFrame:CGRectMake(50, 126, 80,80)];
-        [image4 setFrame:CGRectMake(190, 126, 80,80)];
-        [image5 setFrame:CGRectMake(50, 226, 80,80)];
-        [image6 setFrame:CGRectMake(190, 226, 80,80)];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            [viewForButtons setFrame:CGRectMake(5, 315 + 64, 310, 40)];
+            [image1 setFrame:CGRectMake(50, 36 + 64, 80,80)];
+            [image2 setFrame:CGRectMake(190, 36 + 64, 80,80)];
+            [image3 setFrame:CGRectMake(50, 126 + 64, 80,80)];
+            [image4 setFrame:CGRectMake(190, 126 + 64, 80,80)];
+            [image5 setFrame:CGRectMake(50, 226 + 64, 80,80)];
+            [image6 setFrame:CGRectMake(190, 226 + 64, 80,80)];
+        }
+        else
+        {
+            [viewForButtons setFrame:CGRectMake(5, 315, 310, 40)];
+            [image1 setFrame:CGRectMake(50, 36, 80,80)];
+            [image2 setFrame:CGRectMake(190, 36, 80,80)];
+            [image3 setFrame:CGRectMake(50, 126, 80,80)];
+            [image4 setFrame:CGRectMake(190, 126, 80,80)];
+            [image5 setFrame:CGRectMake(50, 226, 80,80)];
+            [image6 setFrame:CGRectMake(190, 226, 80,80)];
+        }
     }
 
     self.arrayOfViews = [[NSArray alloc] initWithObjects:image1,image2,image3,image4,image5,image6, nil];
@@ -241,7 +272,7 @@
 }
 -(void)addProduct:(NSString *)string withURL:(NSString *)ulr
 {
-    int access;
+    int access = 0;
     for (id obj in self.requestStringArray)
         NSLog(@"obj: %@", obj);
 
@@ -316,7 +347,7 @@
 - (void)startButton:(id)sender {
     for(int i=0;i<self.requestStringArray.count;i++){
     [self.requestString appendString:@"&items[]="];
-    [self.requestString appendString:[self.requestStringArray objectAtIndex:i]];
+    [self.requestString appendString:[NSString stringWithFormat:@"%@", [self.requestStringArray objectAtIndex:i]]];
     }
 
     NSLog(@"Request %@", self.requestString);

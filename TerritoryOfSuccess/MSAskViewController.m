@@ -80,8 +80,15 @@
     self.backButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"BackKey", nil) style:UIBarButtonItemStylePlain target:self action:@selector(backButtonPressed:)];
 //    [self.backButton setTitle:NSLocalizedString(@"BackKey", nil)];
     self.tableOfCategories.tableHeaderView = nil;
-    self.headerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 44, self.tableOfCategories.frame.size.width, 60)];
     UIImageView *headerView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 11, 50, 38)];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        self.headerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 44 + 20, self.tableOfCategories.frame.size.width, 60)];
+    }
+    else
+    {
+        self.headerButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 44, self.tableOfCategories.frame.size.width, 60)];
+    }
     [headerView setImage:[UIImage imageNamed:@"hheader.png"]];
     [self.headerButton addSubview:headerView];
     [self.headerButton.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:15]];
@@ -98,6 +105,10 @@
     if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
         [self customizeNavBar];
+    }
+    else
+    {
+        [self.navigationBar setFrame:CGRectMake(0, 0, 320, 64)];
     }
     if(!self.upperTitle){
     self.upperTitle = @"";
@@ -283,20 +294,48 @@
         NSLog(@"THis is products");
         self.thisIsProducts  = YES;
         if ([[UIScreen mainScreen] bounds].size.height == 568) {
-        [self.tableOfCategories setFrame:CGRectMake(0, 104, 320, 440)];
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 104 + 20, 320, 440)];
+            }
+            else
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 104, 320, 440)];
+            }
         }
         else{
-            [self.tableOfCategories setFrame:CGRectMake(0, 104, 320, 356)];
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 104 + 20, 320, 356)];
+            }
+            else
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 104, 320, 356)];
+            }
         }
         //self.tableOfCategories.tableHeaderView = self.headerButton;
         [self.view addSubview:self.headerButton];
     }
     else{
         if ([[UIScreen mainScreen] bounds].size.height == 568) {
-            [self.tableOfCategories setFrame:CGRectMake(0, 44, 320, 504)];
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 44 + 20, 320, 504)];
+            }
+            else
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 44, 320, 504)];
+            }
         }
         else{
-          [self.tableOfCategories setFrame:CGRectMake(0, 44, 320, 416)];
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 44 + 20, 320, 416)];
+            }
+            else
+            {
+                [self.tableOfCategories setFrame:CGRectMake(0, 44, 320, 416)];
+            }
         }
     }
         NSLog(@"RELOAD");
