@@ -67,7 +67,7 @@
     [self.pressLabel setText:NSLocalizedString(@"PressToBonusKey", nil)];
     [self.api getProfileData];
     _downloadIsComplete = NO;
-    [self.profileTableView setContentInset:UIEdgeInsetsMake(50,0,0,0)];
+//    [self.profileTableView setContentInset:UIEdgeInsetsMake(50,0,0,0)];
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bonusViewTaped)];
     [self.bonusView addGestureRecognizer:tapRecognizer];
     
@@ -166,6 +166,8 @@
             [cell setSelection];
             [cell.checkboxButton addTarget:self action:@selector(checkboxPressed:) forControlEvents:UIControlEventTouchUpInside];
             
+            cell.backgroundColor = [UIColor clearColor];
+            
             return cell;
         }
         
@@ -177,6 +179,9 @@
                 MSProfileSaveCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
                 [cell.SaveButton addTarget:self action:@selector(SaveButtonPressed) forControlEvents:UIControlEventTouchUpInside];
                 [cell.SaveButton setTitle:NSLocalizedString(@"EditKey", nil) forState:UIControlStateNormal];
+                
+                cell.backgroundColor = [UIColor clearColor];
+
                 return cell;
             }
             else
@@ -187,6 +192,9 @@
                 [cell.saveButton addTarget:self action:@selector(saveChanges) forControlEvents:UIControlEventTouchUpInside];
                 [cell.cancelButton setTitle:NSLocalizedString(@"Отмена", nil) forState:UIControlStateNormal];
                 [cell.saveButton setTitle:NSLocalizedString(@"SaveKey", nil) forState:UIControlStateNormal];
+                
+                cell.backgroundColor = [UIColor clearColor];
+
                 return cell;
             }
         }
@@ -196,6 +204,9 @@
             [cell.tipsButton setTitle:NSLocalizedString(@"TipsKey", nil) forState:UIControlStateNormal];
             //cell.textLabel.text = @"sadsd";
             [cell setBackgroundColor:[UIColor clearColor]];
+            
+            cell.backgroundColor = [UIColor clearColor];
+
             return cell;
         }
         else
@@ -282,6 +293,8 @@
             cell.standartTextField.delegate = self;
             [cell.standartTextField addTarget:self action:@selector(TextFieldStartEditing:) forControlEvents:UIControlEventEditingDidBegin];
             
+            cell.backgroundColor = [UIColor clearColor];
+            
             return cell;
         }
     }
@@ -293,6 +306,9 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
+        
+        cell.backgroundColor = [UIColor clearColor];
+
         return cell;
     }
 }
