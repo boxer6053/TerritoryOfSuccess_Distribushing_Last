@@ -143,6 +143,8 @@
     
     cell.commentdate.text = [[[self commentsArray] objectAtIndex:indexPath.row] valueForKey:@"date"];
     
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 

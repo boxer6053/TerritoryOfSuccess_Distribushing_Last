@@ -17,6 +17,7 @@
 #import "PrettyKit.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MSTipsCell.h"
+#import "MSiOSVersionControlHeader.h"
 
 @interface MSProfileViewController ()
 {
@@ -67,7 +68,15 @@
     [self.pressLabel setText:NSLocalizedString(@"PressToBonusKey", nil)];
     [self.api getProfileData];
     _downloadIsComplete = NO;
-//    [self.profileTableView setContentInset:UIEdgeInsetsMake(50,0,0,0)];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        [self.bonusView setFrame:CGRectMake(self.bonusView.frame.origin.x, self.bonusView.frame.origin.y + 64, self.bonusView.frame.size.width, self.bonusView.frame.size.height)];
+        [self.profileTableView setContentInset:UIEdgeInsetsMake(16,0,0,0)];
+    }
+    else
+    {
+        [self.profileTableView setContentInset:UIEdgeInsetsMake(50,0,0,0)];
+    }
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bonusViewTaped)];
     [self.bonusView addGestureRecognizer:tapRecognizer];
     
@@ -294,6 +303,19 @@
             [cell.standartTextField addTarget:self action:@selector(TextFieldStartEditing:) forControlEvents:UIControlEventEditingDidBegin];
             
             cell.backgroundColor = [UIColor clearColor];
+            
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                UIView *separatorLineView = (UIView *)[cell viewWithTag:10];
+                
+                if (!separatorLineView)
+                {
+                    separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, cell.frame.size.height - 1, 320, 1)];
+                    [separatorLineView setTag:10];
+                    separatorLineView.backgroundColor = [UIColor colorWithWhite:0.667 alpha:0.5];
+                    [cell.contentView addSubview:separatorLineView];
+                }
+            }
             
             return cell;
         }

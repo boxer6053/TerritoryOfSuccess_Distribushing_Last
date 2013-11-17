@@ -190,6 +190,7 @@
     cell.categoryOrBrandName.text = [[self.categoriesList objectAtIndex:indexPath.row] valueForKey:@"title"];
     cell.categoryOrBrandNumber.text = [[self.categoriesList objectAtIndex:indexPath.row] valueForKey:@"cnt"];
     cell.categoryOrBrandImage.image = [UIImage imageNamed:@"bag.png"];
+        cell.backgroundColor = [UIColor clearColor];
         return cell;
 
     }
@@ -203,6 +204,7 @@
          cell.productRatingImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%dstar.png",[[[self.categoriesList objectAtIndex:indexPath.row] valueForKey:@"rating"]integerValue]]];
         //cell.productBrandName.text = [[[self.categoriesList objectAtIndex:indexPath.row] valueForKey:@"brand"] valueForKey:@"title"];
         [cell.prodactBrandLabel setHidden:YES];
+        cell.backgroundColor = [UIColor clearColor];
         return cell;
         }
 }
