@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9196061183AB3E4004A434F /* userIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = B919605F183AB3E4004A434F /* userIcon2.png */; };
+		B9196062183AB3E4004A434F /* userIcon2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9196060183AB3E4004A434F /* userIcon2@2x.png */; };
 		B9D7743F1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D7743E1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard */; };
 		DA20B1D317EC4BEA00F8CEBE /* iconWhite120.png in Resources */ = {isa = PBXBuildFile; fileRef = DA20B1D217EC4BEA00F8CEBE /* iconWhite120.png */; };
 		DA3183E717A7DFDA00EB6432 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3183E617A7DFDA00EB6432 /* ODRefreshControl.m */; };
@@ -188,6 +190,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B919605F183AB3E4004A434F /* userIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIcon2.png; sourceTree = "<group>"; };
+		B9196060183AB3E4004A434F /* userIcon2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userIcon2@2x.png"; sourceTree = "<group>"; };
 		B9D7743E1832D9B9004F2D3D /* iPhoneStoryboard_iOS7.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard_iOS7.storyboard; sourceTree = "<group>"; };
 		DA20B1D217EC4BEA00F8CEBE /* iconWhite120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconWhite120.png; sourceTree = "<group>"; };
 		DA3183E517A7DFDA00EB6432 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
@@ -750,6 +754,8 @@
 		F59AEB7E16AF1770004519B9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B919605F183AB3E4004A434F /* userIcon2.png */,
+				B9196060183AB3E4004A434F /* userIcon2@2x.png */,
 				F5A7B4EC171D8ADB00B59358 /* Bookmarks1.png */,
 				F5A7B4F5171EB0BF00B59358 /* 22_1.png */,
 				F5A7B4F7171EB67D00B59358 /* Gallery1.png */,
@@ -1258,6 +1264,7 @@
 				F57217D416B6E4AC00705682 /* dialogViewGradient.png in Resources */,
 				FA827C6216B198CA00EAC0DD /* fbButton.png in Resources */,
 				FA827C6316B198CA00EAC0DD /* twButton.png in Resources */,
+				B9196062183AB3E4004A434F /* userIcon2@2x.png in Resources */,
 				FA827C6416B198CA00EAC0DD /* vkButton.png in Resources */,
 				FA3B6F2016B700BA0095A851 /* 0star.png in Resources */,
 				FA884BBE16B7FB35002A7FDC /* shareButton.png in Resources */,
@@ -1291,6 +1298,7 @@
 				FA2CEC1616DBBD42007015BC /* starButton.png in Resources */,
 				FA2CEC1716DBBD42007015BC /* whiteStarButton.png in Resources */,
 				FA252B3116D78F22006F6AD6 /* button_80_44-2.png in Resources */,
+				B9196061183AB3E4004A434F /* userIcon2.png in Resources */,
 				F5BDD2CC16DE765A00B2E518 /* addButton1.png in Resources */,
 				F5D8C64916DD07660035EF30 /* button_185_45.png in Resources */,
 				F5D8C64B16DD08C70035EF30 /* button_140*35.png in Resources */,

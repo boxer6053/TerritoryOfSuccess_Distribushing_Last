@@ -448,7 +448,7 @@
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="S0C-j4-tdR">
-                        <barButtonItem key="rightBarButtonItem" image="Profile-Picture_40*28_white.png" id="xiG-LB-pWW">
+                        <barButtonItem key="rightBarButtonItem" image="userIcon2.png" id="xiG-LB-pWW">
                             <connections>
                                 <action selector="profileButtonPressed:" destination="jKd-fR-cIU" id="m6R-Tb-sE8"/>
                             </connections>
@@ -1606,7 +1606,6 @@
     </scenes>
     <resources>
         <image name="3star.png" width="174" height="40"/>
-        <image name="Profile-Picture_40*28_white.png" width="40" height="28"/>
         <image name="bookm2.png" width="30" height="30"/>
         <image name="button_185_45.png" width="370" height="90"/>
         <image name="button_300*43.png" width="600" height="86"/>
@@ -1625,6 +1624,7 @@
         <image name="promo_orange.png" width="256" height="256"/>
         <image name="questions1.png" width="25" height="25"/>
         <image name="twButton.png" width="32" height="33"/>
+        <image name="userIcon2.png" width="31" height="28"/>
         <image name="vkButton.png" width="32" height="33"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
