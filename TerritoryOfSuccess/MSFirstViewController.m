@@ -429,7 +429,14 @@
                 {
                     [overlayImageView setFrame:CGRectMake((self.screenWidth - self.frameMarkWidth)/2, (self.screenHeight - 96 - self.frameMarkHeight)/2, self.frameMarkWidth, self.frameMarkHeight)];
                     
-                    [overlayAlphaTopView setFrame:CGRectMake(0, 0 + 20, 320, (self.screenHeight - 96 - self.frameMarkHeight)/2)];
+                    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+                    {
+                        [overlayAlphaTopView setFrame:CGRectMake(0, 0 + 20, 320, (self.screenHeight - 96 - self.frameMarkHeight)/2)];
+                    }
+                    else
+                    {
+                        [overlayAlphaTopView setFrame:CGRectMake(0, 0 + 20, 320, (self.screenHeight - 96 - self.frameMarkHeight)/2)];
+                    }
                     
                     [overlayAlphaBottomView setFrame:CGRectMake(0, (self.screenHeight - 96 + self.frameMarkHeight)/2, 320, self.screenHeight - (self.screenHeight - 96 + self.frameMarkHeight)/2 - 96 + 3)];
                     
@@ -509,8 +516,6 @@
     NSLog(@"Picture hight: %f", img.size.height);
     
     UIImage *tempImage = [self cropImage:[info objectForKey:UIImagePickerControllerEditedImage] withX:(self.screenWidth - self.frameMarkWidth)/2 withY:(self.screenHeight - 54 - self.frameMarkHeight)/2 withWidth:self.frameMarkWidth withHeight:self.frameMarkHeight];
-    
-    [self.testImageView setImage:tempImage];
     
     //------------------------------
     NSString *recognizedText;
@@ -768,7 +773,14 @@ static inline double radians (double degrees)
     {
         if (!self.loginView)
         {
-            self.loginView = [[MSLogInView alloc]initWithOrigin:CGPointMake(25, self.view.frame.size.height/2 - 120)];
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                self.loginView = [[MSLogInView alloc]initWithOrigin:CGPointMake(25, self.view.frame.size.height/2 - 120 - 64)];
+            }
+            else
+            {
+                self.loginView = [[MSLogInView alloc]initWithOrigin:CGPointMake(25, self.view.frame.size.height/2 - 120)];
+            }
             [self.view addSubview:self.loginView];
             [self.loginView blackOutOfBackground];
             [self.loginView attachPopUpAnimationForView:self.loginView.loginView];
@@ -1162,6 +1174,10 @@ static inline double radians (double degrees)
             [self.scrollView setContentSize:CGSizeMake(320.0, 480.0 + 55.0)];
             
             CGFloat tempy = 480.0 + 55.0;
+            if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+            {
+                tempy = tempy - 64;
+            }
             CGFloat tempx = 320.0;
             CGRect zoomRect = CGRectMake((tempx/2), (tempy/2), tempy, tempx);
             

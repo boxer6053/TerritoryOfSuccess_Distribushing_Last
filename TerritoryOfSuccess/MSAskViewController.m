@@ -438,7 +438,14 @@
     
     [picker dismissModalViewControllerAnimated:YES];
 //    self.addingView = [[MSAddingProductView alloc] initWithOrigin:CGPointMake(0, self.view.frame.size.height/2 - 120)];
-    self.addingView = [[MSAddingProductView alloc] initWithOrigin:CGPointMake(0, ([[UIScreen mainScreen] bounds].size.height - 170)/2)];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+    {
+        self.addingView = [[MSAddingProductView alloc] initWithOrigin:CGPointMake(0, ([[UIScreen mainScreen] bounds].size.height - 170)/2 - 64)];
+    }
+    else
+    {
+        self.addingView = [[MSAddingProductView alloc] initWithOrigin:CGPointMake(0, ([[UIScreen mainScreen] bounds].size.height - 170)/2)];
+    }
     [self.addingView.productImageView setImage:compressedImage];
     self.addingView.categoryID = self.upperID;
     self.addingView.sendingImage = compressedImage;

@@ -3,6 +3,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MSAddCommentView.h"
 #import "SVProgressHUD.h"
+#import "MSiOSVersionControlHeader.h"
 
 @interface MSCommentsViewController ()
 {
@@ -208,7 +209,14 @@
 {
     if (buttonIndex == 1)
     {
-        self.loginView = [[MSLogInView alloc]initWithOrigin:CGPointMake(25, self.view.frame.size.height/2 - 70)];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+        {
+            self.loginView = [[MSLogInView alloc]initWithOrigin:CGPointMake(25, self.view.frame.size.height/2 - 70 - 64)];
+        }
+        else
+        {
+            self.loginView = [[MSLogInView alloc]initWithOrigin:CGPointMake(25, self.view.frame.size.height/2 - 70)];
+        }
         [self.view.window addSubview:self.loginView];
         [self.loginView blackOutOfBackground];
         [self.loginView attachPopUpAnimationForView:self.loginView.loginView];
